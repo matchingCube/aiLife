@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -11,6 +12,15 @@ import {
 const { width, height } = Dimensions.get("window");
 
 export default function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const toggle = setInterval(() => {
+      setCount(count + 1);
+    }, 60000);
+    return () => clearInterval(toggle);
+  });
+
   return (
     <View style={styles.container}>
       <Text style={[styles.colorRed, styles.topSection]}>250</Text>
@@ -31,7 +41,7 @@ export default function App() {
           resizeMode="contain"
           style={styles.heartIcon}
         >
-          <Text style={[styles.colorWhite, styles.number]}>0.0</Text>
+          <Text style={[styles.colorWhite, styles.number]}>{count}.0</Text>
           <Text style={[styles.colorWhite, styles.label]}>mmol</Text>
         </ImageBackground>
       </ImageBackground>
@@ -85,8 +95,8 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     position: "absolute",
-    top: height * 0.1,
-    right: width * -0.06,
+    top: height * 0.06,
+    right: width * -0.05,
     alignItems: "center",
   },
   number: {
