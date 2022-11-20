@@ -19,7 +19,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.pagepro.ailife",
+      "bundleIdentifier": "com.pagepro.aiLife",
       "buildNumber": "1.0.0"
     },
     "android": {
@@ -27,7 +27,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.pagepro.ailife",
+      "package": "com.pagepro.aiLife",
       "versionCode": 1
     },
     "web": {
